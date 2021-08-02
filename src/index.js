@@ -9,6 +9,9 @@ const mongoose = require('mongoose')
 const UserRouter=require('./routers/user')
 const TaskRouter=require('./routers/task')
 
+const path = require('path');
+const publicdirectorypath = path.join(__dirname, '../public');
+
 // app.use((req,res)=>{
 // res.status(503).send('Site is under maintenance')
 // })
@@ -26,6 +29,8 @@ const TaskRouter=require('./routers/task')
 
 
 app.use(express.json())
+
+app.use(express.static(publicdirectorypath))
 
 app.use(UserRouter)
 app.use(TaskRouter)
