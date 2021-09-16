@@ -1,5 +1,5 @@
 
-const user=JSON.parse(sessionStorage.getItem("user"));
+const user=JSON.parse(localStorage.getItem("user"));
 if(!user)
 {
 alert('Please login')
@@ -11,7 +11,7 @@ alert('Please login')
 const taskAddedAlert=document.getElementById('task')
 taskAddedAlert.style='display:none'
 const addTaskForm=document.getElementById('addTask')
-const token=JSON.parse(sessionStorage.getItem("user")).token
+const token=JSON.parse(localStorage.getItem("user")).token
 
 
 async function addTask(url , data ) {
@@ -72,7 +72,7 @@ logOut.addEventListener('click',async(e)=>{
    e.preventDefault()
   
   const logoutStatus=await logOutUser('/users/logout')
-sessionStorage.removeItem('user')
+localStorage.removeItem('user')
 location.href = './index.html';
 
 })

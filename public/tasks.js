@@ -1,5 +1,5 @@
 
-const user=JSON.parse(sessionStorage.getItem("user"));
+const user=JSON.parse(localStorage.getItem("user"));
 if(!user)
 {
 alert('Please login')
@@ -70,7 +70,7 @@ async function logOutUser(url , data ) {
 logOut.addEventListener('click',async(e)=>{
    e.preventDefault()
   const logoutStatus=await logOutUser('/users/logout')
-sessionStorage.removeItem('user')
+localStorage.removeItem('user')
 location.href = './index.html';
 
 })

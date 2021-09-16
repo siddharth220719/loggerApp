@@ -1,5 +1,5 @@
 
-const user=JSON.parse(sessionStorage.getItem("user"));
+const user=JSON.parse(localStorage.getItem("user"));
 if(!user)
 {
 alert('Please login')
@@ -8,7 +8,7 @@ alert('Please login')
 
 
 }
-const token=JSON.parse(sessionStorage.getItem("user")).token
+const token=JSON.parse(localStorage.getItem("user")).token
 const updateForm=document.getElementById('updateForm')
 updateForm.elements['name'].value=user.user.name
 updateForm.elements['age'].value=user.user.age
@@ -45,11 +45,11 @@ updateForm.addEventListener('submit',async(e)=>{
     if(user)
     {   
         function update(value){
-            let prevData = JSON.parse(sessionStorage.getItem('user'));
+            let prevData = JSON.parse(localStorage.getItem('user'));
             Object.keys(value).forEach(function(val, key){
                  prevData[val] = value[val];
             })
-            sessionStorage.setItem('user', JSON.stringify(prevData));
+            localStorage.setItem('user', JSON.stringify(prevData));
         }
         
         update({user})
@@ -86,7 +86,7 @@ logOut.addEventListener('click',async(e)=>{
      e.preventDefault()
     
     const logoutStatus=await logOutUser('/users/logout')
-sessionStorage.removeItem('user')
+localStorage.removeItem('user')
 location.href = './index.html';
 
 })

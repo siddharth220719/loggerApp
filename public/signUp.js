@@ -1,6 +1,6 @@
 const signUpForm=document.getElementById('signUpForm')
 
-if(sessionStorage.getItem("user")!=null&&JSON.parse(sessionStorage.getItem("user")).token!=null)
+if(localStorage.getItem("user")!=null&&JSON.parse(localStorage.getItem("user")).token!=null)
 {
   alert('Already logged in')
   
@@ -38,7 +38,7 @@ signUpForm.addEventListener('submit',async(e)=>{
     
     if(user.user)
     {
-        sessionStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(user));
         setTimeout(() => {
           location.href = './tasks.html';
         }, 1500);

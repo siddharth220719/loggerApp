@@ -4,7 +4,7 @@ const login_failed_alert=document.getElementById('failed')
 const  success_alert=document.getElementById('success')
 login_failed_alert.style='display:none'
 success_alert.style='display:none'
-if(sessionStorage.getItem("user")!=null&&JSON.parse(sessionStorage.getItem("user")).token!=null)
+if(localStorage.getItem("user")!=null&&JSON.parse(localStorage.getItem("user")).token!=null)
 {
   alert('Already logged in')
   
@@ -41,7 +41,7 @@ async function loginData(url , data ) {
   if(user)
   {
     console.log(user)
-    sessionStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
     success_alert.style='display:block'
     setTimeout(() => {
       location.href = './tasks.html';

@@ -6,7 +6,7 @@ const addTasks=document.getElementById('addTasks')
 const profile=document.getElementById('profile')
 
 
-if(sessionStorage.getItem("user")!=null)
+if(localStorage.getItem("user")!=null)
 {
    
 
@@ -28,7 +28,7 @@ tasks.style='display:none'
     addTasks.style='display:none'
     profile.style='display:none'
 }
-const token=JSON.parse(sessionStorage.getItem("user")).token
+const token=JSON.parse(localStorage.getItem("user")).token
 
 
   async function logOutUser(url , data ) {
@@ -54,7 +54,7 @@ const token=JSON.parse(sessionStorage.getItem("user")).token
 logOut.addEventListener('click',async(e)=>{
     e.preventDefault()
     const logoutStatus=await logOutUser('/users/logout')
-sessionStorage.removeItem('user')
+localStorage.removeItem('user')
 location.href = './index.html';
 
 })
