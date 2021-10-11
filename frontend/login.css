@@ -56,8 +56,26 @@ align-items: center;
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  width: 70vw;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 80vw;
+  box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  
+}
+  /* .styled-table th{
+    padding: 0.1vw;
+    
+  } */
+.styled-table tr{
+ padding: 1vw;
+  
+}
+.styled-table thead {
+  height: 5vh;
+   
+ }  
+
+.styled-table tbody tr {
+ height: 6vh;
+  
 }
 .styled-table tbody a
 {
