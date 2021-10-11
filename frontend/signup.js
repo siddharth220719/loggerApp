@@ -43,5 +43,11 @@ signUpForm.addEventListener('submit',async(e)=>{
         }, 1500);
     }
 
+    else
+    {
+      alert('User already exists Please Login ')
+      location.href = './login.html';
+    }
+
 
 })
