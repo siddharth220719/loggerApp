@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+  <title>Logs</title>
+</head>
+
+<body>
+  <div id="header">
+    <nav>
+      <div id="logo-container">
+        <img id="logo" src="./icons/logo.png" alt="" />
+
+        <a href="/">Logger App</a>
+      </div>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+
+        <li><a class="active-link" href="">Logs</a></li>
+        <li><a href="./addlog.html">Add Logs</a></li>
+        <li><a href="" id="logOut">LogOut</a></li>
+      </ul>
+      <div class="navigation">
+        <div id="menuToggle">
+
+          <input id="menuButton" type="checkbox" onclick="displayMenu()" />
+
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+
+          <ul id="menu">
+            <a href="./index.html">
+              <li>Home</li>
+            </a>
+
+            <a href="./addlog.html" id="addLogs">
+              <li>Add Logs</li>
+            </a>
+            <a href="" id="logOut2">
+              <li>LogOut</li>
+            </a>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="main">
+    <h1>Logs</h1>
+    <div class="login form">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Log</th>
+            <th>Priority</th>
+            <th>Description</th>
+            <th>Delete</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody id="logs">
+
+        </tbody>
+      </table>
+
+      <div id="pagination" class="pagination">
+        
+      </div>
+    </div>
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" action="/action_page.php">
+        <div class="container">
+          <h1>Delete Account</h1>
+          <p>Are you sure you want to delete your account?</p>
+    
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="button" class="deletebtn">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+  let navMenu = document.getElementById('menu')
+  navMenu.style.display = 'none'
+  displayMenu = () => {
+    if (navMenu.style.display == 'none')
+      navMenu.style.display = 'block'
+
+    else
+      navMenu.style.display = 'none'
+  }
+</script>
+<script src="./logs.js"></script>
+
+</html>

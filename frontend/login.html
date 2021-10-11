@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./login.css" />
+
+  <title>Login</title>
+</head>
+
+
+<body>
+  <div id="header">
+    <nav>
+      <div id="logo-container">
+        <img id="logo" src="./icons/logo.png" alt="" />
+        <a href="/">Logger App</a>
+      </div>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a class="active-link" href="#">Login</a></li>
+        <li><a href="./signup.html">Signup</a></li>
+      
+      </ul>
+
+      <div class="navigation">
+        <div id="menuToggle">
+
+          <input id="menuButton" type="checkbox" onclick="displayMenu()" />
+
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+
+          <ul id="menu">
+            <a href="./index.html">
+              <li>Home</li>
+            </a>
+            <a href="#">
+              <li>Login</li>
+            </a>
+            <a href="./signup.html">
+              <li>Signup</li>
+            </a>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="main">
+    <h1>Login</h1>
+    <div class="login form">
+      <form id="loginForm">
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" placeholder="example@example.com" class="text" required /><br />
+        <label for="password">Password</label><br />
+        <input type="password" class="text" id="password" name="password" placeholder="*********" /><br /><br />
+        <input class="login-button" type="submit" value="login" />
+        <div id="failed">
+
+          <div>
+            Unable to Login</div>
+        </div>
+
+        <div id="success">
+          <div>
+            Login SuccessFull</div>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+</body>
+<script>
+  let navMenu = document.getElementById('menu')
+  navMenu.style.display = 'none'
+  displayMenu = () => {
+    if (navMenu.style.display == 'none')
+      navMenu.style.display = 'block'
+
+    else
+      navMenu.style.display = 'none'
+  }
+</script>
+<script src="./login.js"></script>
+
+</html>

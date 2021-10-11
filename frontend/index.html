@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./login.css" />
+
+  <title>Login</title>
+</head>
+
+
+<body>
+  <div id="header">
+    <nav>
+      <div id="logo-container">
+        <img id="logo" src="./icons/logo.png" alt="" />
+        <a href="/">Logger App</a>
+      </div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li id="login"><a  href="./login.html">Login</a></li>
+        <li  id="signUp"><a href="./signup.html">Signup</a></li>
+        <li id="logs"><a  href="./logs.html">Logs</a></li>
+        <li id="addLogs"><a  href="./addlog.html">Add Logs</a></li>
+        <li><a href="" id="logOut"  >LogOut</a></li>
+      </ul>
+      <!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<div class="navigation">
+  <div id="menuToggle">
+    
+    <input id="menuButton" type="checkbox" onclick="displayMenu()" />
+    
+  
+    <span></span>
+    <span></span>
+    <span></span>
+    
+ 
+    <ul id="menu">
+      <a href="#"><li>Home</li></a>
+      <a id="login2" href="./login.html"><li>Login</li></a>
+      <a id="signUp2" href="./signup.html"><li>Signup</li></a>
+      <a href="./logs.html" id="logs"><li>Logs</li></a>
+      <a href="./addlog.html" id="addLogs"><li>Add Logs</li></a>
+      <a href="" id="logOut2"  ><li>LogOut</li></a>
+    </ul>
+  </div>
+</div>
+    </nav>
+  </div>
+  <div id="main">
+    <h1>Welcome to Logger App</h1>
+    <div class="login form">
+      
+    </div>
+  </div>
+</body>
+<script>
+  let navMenu=document.getElementById('menu')
+  navMenu.style.display='none'
+   displayMenu=()=>{
+if(navMenu.style.display=='none')
+navMenu.style.display='block'
+
+else
+navMenu.style.display='none'
+  }
+</script>
+<script src="./index.js"></script>
+</html>
