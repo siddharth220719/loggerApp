@@ -40,7 +40,7 @@ async function loginData(url , data ) {
   login_failed_alert.style='display:none'
   if(user)
   {
-    console.log(user)
+    
     localStorage.setItem("user", JSON.stringify(user));
     success_alert.style='display:flex'
     setTimeout(() => {

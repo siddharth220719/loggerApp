@@ -3,7 +3,7 @@
 
 const user=JSON.parse(localStorage.getItem("user"));
 
-
+// console.log(user)
 if(!user)
 {
 alert('Please login')
@@ -53,11 +53,17 @@ addTaskForm.addEventListener('submit',async(e)=>{
     const name=document.getElementById('name').value
     const email=document.getElementById('email').value
     const password=document.getElementById('password').value
+   
+    const User=await updateProfile('/users/me',{name,email,password})
+ 
+    
     user.user.name=name
     user.user.email=email
-    const user=await updateProfile('/users/me',{name,email,password})
-    
-    if(user._id)
+ 
+    localStorage.removeItem('user')
+    localStorage.setItem("user", JSON.stringify(user));
+
+    if(User._id)
     {
         profileUpdatedAlert.style='display:flex'
 setTimeout(() => {
