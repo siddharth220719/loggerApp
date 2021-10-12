@@ -53,7 +53,8 @@ addTaskForm.addEventListener('submit',async(e)=>{
     const name=document.getElementById('name').value
     const email=document.getElementById('email').value
     const password=document.getElementById('password').value
-    
+    user.user.name=name
+    user.user.email=email
     const user=await updateProfile('/users/me',{name,email,password})
     
     if(user._id)
