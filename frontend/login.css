@@ -4,6 +4,12 @@
   font-family: 'Segoe UI', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 }
 
+#profile-image a img{
+  width: 15vw;
+  height: 30vh;
+
+}
+
 #failed{
 display: flex;
 justify-content: center;

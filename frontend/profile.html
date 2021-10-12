@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+
+    <title>Profile</title>
+  </head>
+  <body>
+    <div id="header">
+      <nav>
+        <div id="logo-container">
+          <img id="logo" src="./icons/logo.png" alt="" />
+    
+          <a href="/">Logger App</a>
+        </div>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+        
+          <li><a href="./logs.html">Logs</a></li>
+          <li><a href="./addlog.html">Add Logs</a></li>
+
+          <li><a class="active-link" href="#">Profile</a></li>
+          <li><a href="" id="logOut"  >LogOut</a></li>
+          
+        </ul>
+        <div class="navigation">
+          <div id="menuToggle">
+            
+            <input id="menuButton" type="checkbox" onclick="displayMenu()" />
+            
+          
+            <span></span>
+            <span></span>
+            <span></span>
+            
+         
+            <ul id="menu">
+              <a href="./index.html"><li>Home</li></a>
+            
+              <a href="./addlog.html"><li>Add Logs</li></a>
+              <a href="./logs.html"><li>Logs</li></a>
+              <a href="" id="logOut2"  ><li>LogOut</li></a>
+            </ul>
+          </div>
+        </div>
+        
+      </nav>
+    </div>
+    <div id="main">
+      <h1>Profile </h1>
+    
+      <div class="login form">
+       
+        <form id="update-profile">
+            <label for="name">Name</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="example@example.com"
+              class="text"
+              required
+            /><br />
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@example.com"
+              class="text"
+              required
+            /><br />
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              class="text"
+              id="password"
+              name="password"
+              placeholder="*********"
+              required
+            />
+            <br>
+            <input class="login-button" id="update" type="submit" value="Update" />
+            <div id="success">
+                <div>
+                  Profile Updated</div>
+              </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    let navMenu=document.getElementById('menu')
+    navMenu.style.display='none'
+     displayMenu=()=>{
+  if(navMenu.style.display=='none')
+  navMenu.style.display='block'
+  
+  else
+  navMenu.style.display='none'
+    }
+  </script>
+  <script src="./profile.js"></script>
+</html>
