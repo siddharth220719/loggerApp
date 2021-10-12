@@ -7,7 +7,7 @@ const getTasks = async (skip) => {
 
   let i = 1;
   tasks.forEach(task => {
-  
+    row.id='row'+task._id
     row.innerHTML = '<th scope="row">' + i + '</th><td>' + task.priority + '</td><td>' + task.description + '</td> <td class=delete  id='+task._id+' ><a href>Delete</a></td> <td class=update id='+task._id+' value='+task.description+'> <a href= >Update </a></td>'
     table.appendChild(row.cloneNode(true))
     i++
@@ -42,7 +42,7 @@ for(let child of deleteLog)
     // document.getElementById('id01').style.display='block'
     e.preventDefault()
     const deletedtask=await deleteTask('/tasks/'+this.id)
-    location.href = './logs.html';
+    document.getElementById('row'+this.id).remove()
 
   }
   
